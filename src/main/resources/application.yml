@@ -1,0 +1,12 @@
+server:
+  port: 8887
+spring:
+  thymeleaf:
+    cache: false
+
+github:
+  Client:
+    id: Iv1.2533d223159ef22a
+    secret: dcdfdd8e3f3c30c055ee7a0b13522b1658ff6152
+  Redirect:
+    uri: http://localhost:8887/callback

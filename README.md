@@ -1,6 +1,6 @@
 #码匠社区
 
 #资料
-spring.io/guides
+[spring文档]spring.io/guides
 #创建githubApp
-https://github.com/settings/apps/new
+[github网址]https://github.com/settings/apps/new
