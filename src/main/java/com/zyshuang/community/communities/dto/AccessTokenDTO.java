@@ -1,9 +1,9 @@
-package com.zyshuang.community.communities.entities;
+package com.zyshuang.community.communities.dto;
 
 /**
  * 访问令牌
  */
-public class AccessToken {
+public class AccessTokenDTO {
 
     private String client_id;
 

@@ -3,7 +3,11 @@ server:
 spring:
   thymeleaf:
     cache: false
-
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/community?serverTimezone=UTC
+    username: root
+    password: root
 github:
   Client:
     id: Iv1.2533d223159ef22a

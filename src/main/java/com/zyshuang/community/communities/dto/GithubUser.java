@@ -1,6 +1,8 @@
-package com.zyshuang.community.communities.entities;
+package com.zyshuang.community.communities.dto;
 
-public class GithubUser {
+import java.io.Serializable;
+
+public class GithubUser implements Serializable {
 
     private String name;
 
@@ -30,5 +32,14 @@ public class GithubUser {
 
     public void setDio(String dio) {
         this.dio = dio;
+    }
+
+    @Override
+    public String toString() {
+        return "GithubUser{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                ", dio='" + dio + '\'' +
+                '}';
     }
 }
