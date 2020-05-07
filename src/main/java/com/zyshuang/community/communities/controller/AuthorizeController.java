@@ -58,13 +58,15 @@ public class AuthorizeController {
         accessToken.setState(state);
         String token = githubProvide.getAccessToken(accessToken);
         GithubUser githubUser = githubProvide.getUser(token);
-        if (githubUser != null){
+        if (githubUser != null && githubUser.getId() != null){
             User user = new User();
             user.setAccountId(String.valueOf(githubUser.getId()));
             user.setName(githubUser.getName());
             user.setToken(UUID.randomUUID().toString());
             user.setGmtCreate(System.currentTimeMillis());
             user.setGmtModified(user.getGmtCreate());
+            user.setBio(githubUser.getBio());
+            user.setAvatarUrl(githubUser.getAvatarUrl());
             userMapper.insert(user);
             request.getSession().setAttribute("user",user);
             //添加cookies 持久化
