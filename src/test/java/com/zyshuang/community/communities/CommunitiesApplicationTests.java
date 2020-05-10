@@ -1,6 +1,7 @@
 package com.zyshuang.community.communities;
 
 import com.zyshuang.community.communities.dto.QuestionDTO;
+import com.zyshuang.community.communities.mapper.QuestionMapper;
 import com.zyshuang.community.communities.service.QuestionService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,10 @@ class CommunitiesApplicationTests {
 
     @Autowired
     private QuestionService questionService;
+    @Autowired
+    private QuestionMapper questionMapper;
+
+
 
     @Test
     void contextLoads() {
