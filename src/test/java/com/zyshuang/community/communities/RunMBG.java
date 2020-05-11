@@ -1,3 +1,4 @@
+/*
 package com.zyshuang.community.communities;
 
 import java.io.File;
@@ -22,3 +23,4 @@ public class RunMBG {
 		   System.out.println("MBG");
 	}
 }
+*/

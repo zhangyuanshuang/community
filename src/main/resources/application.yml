@@ -1,8 +1,6 @@
 server:
   port: 8887
 spring:
-  thymeleaf:
-    cache: false
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/community?serverTimezone=UTC
@@ -18,3 +16,5 @@ github:
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
+  type-aliases-package: com.zyshuang.community.mapper
+  mapper-locations: classpath:mapper/*.xml

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>码匠社区</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/community.css">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.js" type="application/javascript"></script>
+</head>
+<body>
+    <div th:replace="~{navigation::nav}"></div>
+    <div class="jumbotron error-message">
+       <h1>出错啦！！！</h1>
+       <p th:text="${message}">服务器坏了，去找大帅比张某修~</p>
+       <p><a class="btn btn-primary btn-lg" href="/" role="button">点击这里找他~~~</a></p>
+    </div>
+</body>
+</html>

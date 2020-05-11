@@ -5,17 +5,19 @@
 
 <generatorConfiguration>
     <context id="DB2Tables" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
         <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/community?serverTimezone=UTC"
                         userId="root"
                         password="root">
+            <property name="nullCatalogMeansCurrent" value="true"/>
         </jdbcConnection>
 
         <javaTypeResolver >
             <property name="forceBigDecimals" value="false" />
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.zyshuang.community.communities.entities" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.zyshuang.community.entities" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
@@ -24,13 +26,12 @@
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zyshuang.community.communities.mapper"  targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.zyshuang.community.mapper" targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <table tableName="user" domainObjectName="User" >
-            <columnOverride column="address" javaType="java.lang.String" jdbcType="VARCHAR" />
-        </table>
+        <table tableName="user" domainObjectName="User" />
+        <table tableName="question" domainObjectName="Question" />
 
     </context>
 </generatorConfiguration>
