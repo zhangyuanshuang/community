@@ -19,7 +19,7 @@ public class QuestionController {
     private QuestionService questionService;
 
     @GetMapping("/question/{id}")
-    public String toQuestion(@PathVariable("id") Integer id,
+    public String toQuestion(@PathVariable("id") Long id,
                              Model model) {
         //累加阅读数
         questionService.incView(id);

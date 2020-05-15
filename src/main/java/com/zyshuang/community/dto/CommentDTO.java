@@ -4,16 +4,16 @@ import com.zyshuang.community.entities.User;
 import lombok.Data;
 
 @Data
-public class QuestionDTO {
+public class CommentDTO {
+
     private Long id;
-    private String title;
-    private String description;
-    private String tag;
+    private Long parentId;
+    private Integer type;
+    private Long commentator;
     private Long gmtCreate;
     private Long gmtModified;
-    private Long creator;
-    private Integer viewCount;
+    private Long likeCount;
     private Integer commentCount;
-    private Integer likeCount;
+    private String content;
     private User user;
 }

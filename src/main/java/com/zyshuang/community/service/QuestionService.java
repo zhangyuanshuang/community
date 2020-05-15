@@ -5,7 +5,7 @@ import com.zyshuang.community.dto.QuestionDTO;
 import com.zyshuang.community.entities.Question;
 import com.zyshuang.community.entities.QuestionExample;
 import com.zyshuang.community.entities.User;
-import com.zyshuang.community.exception.CustomerErrorEnum;
+import com.zyshuang.community.exception.CustomerErrorCode;
 import com.zyshuang.community.exception.CustomerException;
 import com.zyshuang.community.mapper.QuestionExtMapper;
 import com.zyshuang.community.mapper.QuestionMapper;
@@ -71,7 +71,7 @@ public class QuestionService {
     }
 
     //查询当前用户发布的话题数
-    public PaginationDTO listByUserId(Integer userId, Integer page, Integer size) {
+    public PaginationDTO listByUserId(Long userId, Integer page, Integer size) {
 
         PaginationDTO paginationDTO = new PaginationDTO();
         int totalPage;
@@ -122,11 +122,11 @@ public class QuestionService {
      * @param id
      * @return
      */
-    public QuestionDTO getQuestionById(Integer id) {
+        public QuestionDTO getQuestionById(Long id) {
         //根据Id查询问题
         Question question = questionMapper.selectByPrimaryKey(id);
         if (question == null){
-            throw new CustomerException(CustomerErrorEnum.QUESTION_NOT_FOUND);
+            throw new CustomerException(CustomerErrorCode.QUESTION_NOT_FOUND);
         }
         User user = userMapper.selectByPrimaryKey(question.getCreator());
 
@@ -150,6 +150,9 @@ public class QuestionService {
         if (question.getId() == null){
             question.setGmtCreate(System.currentTimeMillis());
             question.setGmtModified(question.getGmtCreate());
+            question.setViewCount(0);
+            question.setCommentCount(0);
+            question.setLikeCount(0);
             questionMapper.insert(question);
         }else{
 
@@ -163,12 +166,12 @@ public class QuestionService {
                    .andIdEqualTo(question.getId());
             int i = questionMapper.updateByExampleSelective(updateQuestion, example);
             if (i != 1){
-                throw new CustomerException(CustomerErrorEnum.QUESTION_NOT_FOUND);
+                throw new CustomerException(CustomerErrorCode.QUESTION_NOT_FOUND);
             }
         }
     }
 
-    public void incView(Integer id) {
+    public void incView(Long id) {
         Question question = new Question();
         question.setId(id);
         question.setViewCount(1);
