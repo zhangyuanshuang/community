@@ -40,8 +40,28 @@ function post() {
 
 
 /**
- * 二级评论
+ * 展开二级评论
  */
-function collapseComment() {
+function collapseComment(e) {
+    //获取评论的id
+    var id = e.getAttribute("data-id");
+    var comments = $("#comment-"+id);
 
+
+    // comments.toggleClass("in"); 自动添加或删除in class
+
+    //获取当前二级评论状态
+    var collapse = e.getAttribute("data-collapse");
+
+    if(collapse){
+        //折叠二级评论
+        comments.removeClass("in");
+        e.removeAttribute("data-collapse");
+        e.classList.remove("active");
+    }else {
+        //展开二级评论
+        comments.addClass("in");
+        e.setAttribute("data-collapse");
+        e.classList.add("active");
+    }
 }

@@ -63,6 +63,9 @@ body{
 .menu .icon:hover{
     color: #499ef3;
 }
+.menu .active{
+    color: #499ef3;
+}
 
 .comments{
     padding-bottom: 5px;
@@ -71,4 +74,16 @@ body{
 }
 .question_title{
     margin-top: 25px;
+}
+
+.sub-comment{
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #eee;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+.sub-comment .btn{
+    margin: 10px 0;
 }
