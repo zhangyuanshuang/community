@@ -3,6 +3,7 @@ package com.zyshuang.community.controller;
 
 import com.zyshuang.community.dto.CommentDTO;
 import com.zyshuang.community.dto.QuestionDTO;
+import com.zyshuang.community.enums.CommentTypeEnum;
 import com.zyshuang.community.service.CommentService;
 import com.zyshuang.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class QuestionController {
         questionService.incView(id);
 
         //查询评论列表
-        List<CommentDTO> comments = commentService.listByQuestionId(id);
+        List<CommentDTO> comments = commentService.ListByTargetId(id, CommentTypeEnum.QUESTION);
 
         //查询问题数
         QuestionDTO questionDTO = questionService.getQuestionById(id);

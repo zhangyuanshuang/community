@@ -5,17 +5,17 @@ import com.zyshuang.community.dto.CommentDTO;
 import com.zyshuang.community.dto.ResultDTO;
 import com.zyshuang.community.entities.Comment;
 import com.zyshuang.community.entities.User;
+import com.zyshuang.community.enums.CommentTypeEnum;
 import com.zyshuang.community.exception.CustomerErrorCode;
+import com.zyshuang.community.mapper.CommentExtMapper;
 import com.zyshuang.community.service.CommentService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  *  评论
@@ -50,6 +50,20 @@ public class CommentController {
         comment.setCommentator(user.getId());
         comment.setLikeCount(0L);
         commentService.insert(comment);
+
         return ResultDTO.okOf();
+    }
+
+    /**
+     *  查询二级评论
+     * @param id
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/comment/{id}",method = RequestMethod.GET)
+    public ResultDTO<List<CommentDTO>> comments(@PathVariable(name = "id") Long id){
+        //根据目标id查询二级评论（CommentTypeEnum.COMMENT为二级评论）
+        List<CommentDTO> commentDTOS = commentService.ListByTargetId(id, CommentTypeEnum.COMMENT);
+        return ResultDTO.okOf(commentDTOS);
     }
 }

@@ -5,10 +5,7 @@ import com.zyshuang.community.entities.*;
 import com.zyshuang.community.enums.CommentTypeEnum;
 import com.zyshuang.community.exception.CustomerErrorCode;
 import com.zyshuang.community.exception.CustomerException;
-import com.zyshuang.community.mapper.CommentMapper;
-import com.zyshuang.community.mapper.QuestionExtMapper;
-import com.zyshuang.community.mapper.QuestionMapper;
-import com.zyshuang.community.mapper.UserMapper;
+import com.zyshuang.community.mapper.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +31,9 @@ public class CommentService {
     @Autowired
     private QuestionExtMapper questionExtMapper;
 
+    @Autowired
+    private CommentExtMapper commentExtMapper;
+
     /**
      * 事务回滚
      * @param comment
@@ -53,24 +53,37 @@ public class CommentService {
                 throw new CustomerException(CustomerErrorCode.COMMENT_NOT_FOUND);
             }
             commentMapper.insert(comment);
+
+            //增加二级评论数
+            Comment parentComment = new Comment();
+            parentComment.setId(comment.getParentId());
+            parentComment.setCommentCount(1);
+            commentExtMapper.incCommentCount(parentComment);
         }else{
             //回复问题
             Question question = questionMapper.selectByPrimaryKey(comment.getParentId());
             if (question == null) {
                 throw new CustomerException(CustomerErrorCode.QUESTION_NOT_FOUND);
             }
+            comment.setCommentCount(0);
             commentMapper.insert(comment);
             question.setCommentCount(1);
             questionExtMapper.incCommentCount(question);
         }
     }
 
-    public List<CommentDTO> listByQuestionId(Long id) {
+    /**
+     *   通过id和类型查询评论
+     * @param id
+     * @param type
+     * @return
+     */
+    public List<CommentDTO> ListByTargetId(Long id, CommentTypeEnum type) {
         //查评论问题的评论
         CommentExample commentExample = new CommentExample();
         commentExample.createCriteria()
                       .andParentIdEqualTo(id)
-                      .andTypeEqualTo(CommentTypeEnum.QUESTION.getType());
+                      .andTypeEqualTo(type.getType());
         //按照评论时间排序
         commentExample.setOrderByClause("gmt_create desc");
         List<Comment> comments = commentMapper.selectByExample(commentExample);
@@ -99,4 +112,5 @@ public class CommentService {
             return commentDTO;
         }).collect(Collectors.toList());
     }
+
 }
