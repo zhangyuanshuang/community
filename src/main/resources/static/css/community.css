@@ -26,6 +26,25 @@ body{
     margin-top: 15px;
 }
 
+.question_title{
+    margin-top: 25px;
+}
+
+.question_tag{
+    margin-right: 5px;
+}
+
+.question_related{
+    line-height: 20px;
+    font-size: 12px;
+    margin-left: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+.question_image{
+    width: 90%;
+}
 .community-menu{
     display: block;
     margin-bottom: 15px;
@@ -82,9 +101,6 @@ body{
     padding-bottom: 5px;
     margin-bottom: 15px;
     border-bottom: 1px solid #eee;
-}
-.question_title{
-    margin-top: 25px;
 }
 
 .sub-comment{
