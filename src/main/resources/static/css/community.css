@@ -17,13 +17,16 @@ body{
     padding-top: 10px;
 }
 
-.tab-content{
+.publish-tag-tab .tab-content{
     padding-top: 10px;
 }
 
 .publish-tag-tab .label-info{
-    margin-top: 10px;
-    margin-right: 5px;
+    white-space: normal;
+    margin: 5px 5px;
+    display: inline-block;
+    cursor: pointer;
+    cursor: pointer;
 }
 
 
@@ -64,7 +67,6 @@ body{
 }
 
 .community-menu{
-    display: block;
     margin-bottom: 15px;
     font-size: 13px;
     color: #999;
