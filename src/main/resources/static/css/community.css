@@ -11,6 +11,22 @@ body{
     margin-bottom: 15px;
 }
 
+.publish-tag-tab{
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+.tab-content{
+    padding-top: 10px;
+}
+
+.publish-tag-tab .label-info{
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
+
 .media-object{
     height: 38px;
     width: 38px;
@@ -25,6 +41,7 @@ body{
 .profile .section{
     margin-top: 15px;
 }
+
 
 .question_title{
     margin-top: 25px;
@@ -45,6 +62,7 @@ body{
 .question_image{
     width: 90%;
 }
+
 .community-menu{
     display: block;
     margin-bottom: 15px;

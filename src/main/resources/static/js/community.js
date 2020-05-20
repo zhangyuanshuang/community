@@ -127,3 +127,29 @@ function collapseComment(e) {
         }
     }
 }
+
+/**
+ * 标签库
+ * @param value
+ */
+function selectTag(e) {
+    var value = e.getAttribute("data-tag");
+    //获取输入框的值
+    var previous = $("#tag").val();
+    console.log(previous.split(","));
+    //indexof 可判断字符串首次出现的位置 没有出现返回-1
+    if (previous.split(",").indexOf(value) === -1){
+        if (previous){
+            $("#tag").val(previous + ',' + value);
+        }else {
+            $("#tag").val(value);
+        }
+    }
+}
+
+/**
+ * 点击展示或隐藏标签
+ */
+function showSelectTag() {
+    $("#select-tag").show();
+}
