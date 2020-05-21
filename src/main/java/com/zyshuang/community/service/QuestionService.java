@@ -17,7 +17,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,10 +35,9 @@ public class QuestionService {
     //查询所有用户发布的话题数
     public PaginationDTO list(Integer page,Integer size){
 
-        PaginationDTO paginationDTO = new PaginationDTO();
+        PaginationDTO<QuestionDTO> paginationDTO = new PaginationDTO();
         int totalPage;
         //总题数
-
         Integer totalCount = (int)questionMapper.countByExample(new QuestionExample());
 
         if (totalCount % size == 0){
@@ -71,14 +69,14 @@ public class QuestionService {
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
         }
-        paginationDTO.setQuestionDTOS(questionDTOList);
+        paginationDTO.setData(questionDTOList);
         return paginationDTO;
     }
 
     //查询当前用户发布的话题数
     public PaginationDTO listByUserId(Long userId, Integer page, Integer size) {
 
-        PaginationDTO paginationDTO = new PaginationDTO();
+        PaginationDTO<QuestionDTO> paginationDTO = new PaginationDTO<>();
         int totalPage;
         //总题数
         QuestionExample questionExample = new QuestionExample();
@@ -103,9 +101,11 @@ public class QuestionService {
 
         //查询数据索引值
         int offset = size*(page-1);
+
         QuestionExample example = new QuestionExample();
         example.createCriteria()
                 .andCreatorEqualTo(userId);
+        example.setOrderByClause("gmt_create desc");
         List<Question> questions = questionMapper.selectByExampleWithRowbounds(example, new RowBounds(offset, size));
         //放置查询出来的数据
         List<QuestionDTO> questionDTOList = new ArrayList<>();
@@ -118,7 +118,7 @@ public class QuestionService {
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
         }
-        paginationDTO.setQuestionDTOS(questionDTOList);
+        paginationDTO.setData(questionDTOList);
         return paginationDTO;
     }
 

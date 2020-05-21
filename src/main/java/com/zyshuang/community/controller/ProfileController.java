@@ -2,6 +2,7 @@ package com.zyshuang.community.controller;
 
 import com.zyshuang.community.dto.PaginationDTO;
 import com.zyshuang.community.entities.User;
+import com.zyshuang.community.service.NotificationService;
 import com.zyshuang.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,28 +22,34 @@ public class ProfileController {
     @Autowired
     private QuestionService questionService;
 
+    @Autowired
+    private NotificationService notificationService;
+
     @GetMapping("/profile/{action}")
     public String profile(HttpServletRequest request,
+                          @PathVariable(name = "action") String action,
                           Model model,
-                          @PathVariable("action")String action,
-                          @RequestParam(name = "page",defaultValue = "1") Integer page,
-                          @RequestParam(name = "size",defaultValue = "2") Integer size) {
+                          @RequestParam(name = "page", defaultValue = "1") Integer page,
+                          @RequestParam(name = "size", defaultValue = "5") Integer size) {
 
-        //从session中获取
         User user = (User) request.getSession().getAttribute("user");
-        if (user == null){
+        if (user == null) {
             return "redirect:/";
         }
-        if ("question".equals(action)){
-            model.addAttribute("section","question");
-            model.addAttribute("sectionName","我的提问");
-        }else if ("replies".equals(action)){
-            model.addAttribute("section","replies");
-            model.addAttribute("sectionName","最新回复");
+
+        if ("question".equals(action)) {
+            model.addAttribute("section", "question");
+            model.addAttribute("sectionName", "我的提问");
+            PaginationDTO paginationDTO = questionService.listByUserId(user.getId(), page, size);
+            model.addAttribute("pagination", paginationDTO);
+        } else if ("replies".equals(action)) {
+            PaginationDTO paginationDTO = notificationService.listByUserId(user.getId(), page, size);
+            Long unreadCount = notificationService.unreadCount(user.getId());
+            model.addAttribute("section", "replies");
+            model.addAttribute("pagination", paginationDTO);
+            model.addAttribute("unreadCount", unreadCount);
+            model.addAttribute("sectionName", "最新回复");
         }
-        //查询自己发布的问题
-        PaginationDTO paginationDTO = questionService.listByUserId(user.getId(), page, size);
-        model.addAttribute("pagination",paginationDTO);
         return "profile";
     }
 }
