@@ -28,7 +28,7 @@
                             </li>
                             <li>
                                 <a href="/profile/replies" th:if="${session.user != null}">通知
-                                    <span class="badge"></span>
+                                    <span class="badge" th:text="${session.unreadCount}"></span>
                                 </a>
                             </li>
                             <li class="dropdown" th:if="${session.user != null}">
