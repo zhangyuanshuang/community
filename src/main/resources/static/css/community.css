@@ -137,3 +137,8 @@ body{
 .sub-comment .btn{
     margin: 10px 0;
 }
+
+.footer{
+    padding: 15px 25%;
+    color: #666;
+}

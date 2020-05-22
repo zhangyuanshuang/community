@@ -2,6 +2,7 @@ package com.zyshuang.community.service;
 
 import com.zyshuang.community.dto.PaginationDTO;
 import com.zyshuang.community.dto.QuestionDTO;
+import com.zyshuang.community.dto.QuestionQueryDTO;
 import com.zyshuang.community.entities.Question;
 import com.zyshuang.community.entities.QuestionExample;
 import com.zyshuang.community.entities.User;
@@ -17,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,12 +35,24 @@ public class QuestionService {
     private UserMapper userMapper;
 
     //查询所有用户发布的话题数
-    public PaginationDTO list(Integer page,Integer size){
+    public PaginationDTO list(String search, Integer page, Integer size){
+
+
+        if (StringUtils.isNotBlank(search)){
+            //按空格切割
+            String[] searchSplit = StringUtils.split(search, " ");
+            //以|拼接起来
+            Arrays.stream(searchSplit).collect(Collectors.joining("|"));
+        }
 
         PaginationDTO<QuestionDTO> paginationDTO = new PaginationDTO();
+
         int totalPage;
+
+        QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
+        questionQueryDTO.setSearch(search);
         //总题数
-        Integer totalCount = (int)questionMapper.countByExample(new QuestionExample());
+        Integer totalCount = questionExtMapper.countBySearch(questionQueryDTO);
 
         if (totalCount % size == 0){
             totalPage = totalCount / size;
@@ -55,9 +69,9 @@ public class QuestionService {
 
         //查询数据索引值
         int offset = size*(page-1);
-        QuestionExample questionExample = new QuestionExample();
-        questionExample.setOrderByClause("gmt_create desc");
-        List<Question> questions = questionMapper.selectByExampleWithRowbounds(questionExample,new RowBounds(offset,size));
+        questionQueryDTO.setSize(size);
+        questionQueryDTO.setPage(offset);
+        List<Question> questions = questionExtMapper.selectBySearch(questionQueryDTO);
         //放置查询出来的数据
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         for (Question question : questions) {
