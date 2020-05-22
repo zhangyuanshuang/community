@@ -20,3 +20,11 @@ mybatis:
     map-underscore-to-camel-case: true
   type-aliases-package: com.zyshuang.community.mapper
   mapper-locations: classpath:mapper/*.xml
+
+oss:
+  endpoint: oss存储对象域名
+  accessKeyId: id
+  accessKeySecret: 密钥
+  bucketName: 存储空间名称
+  filePath: images/
+  expiration: 315360000

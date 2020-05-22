@@ -102,6 +102,10 @@ public class CommentService {
      * @param outerId
      */
     private void createNotify(Comment comment, Long receiver, String notifierName, String outerTitle, NotificationTypeEnum notificationTypeEnum, Long outerId) {
+        //当时回复别人的时候 不用通知自己
+        if(receiver == comment.getCommentator()){
+            return;
+        }
         //通知
         Notification notification = new Notification();
         notification.setGmtCreate(System.currentTimeMillis());

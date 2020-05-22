@@ -40,7 +40,10 @@ body{
     font-weight: normal;
     color: #999;
 }
-
+.text-hr{
+    margin-top: 5px;
+}
+.
 .profile .section{
     margin-top: 15px;
 }
