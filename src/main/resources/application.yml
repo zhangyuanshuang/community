@@ -1,5 +1,7 @@
 server:
   port: 8887
+
+#数据源 mvc配置
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -8,6 +10,8 @@ spring:
     password: root
   mvc:
     static-path-pattern: /**
+
+#Github第三方
 github:
   Client:
     id: Iv1.2533d223159ef22a
@@ -15,16 +19,31 @@ github:
   Redirect:
     uri: http://localhost:8887/callback
 
+#mybatis
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
   type-aliases-package: com.zyshuang.community.mapper
   mapper-locations: classpath:mapper/*.xml
 
+#云存储
 oss:
-  endpoint: oss存储对象域名
-  accessKeyId: id
-  accessKeySecret: 密钥
-  bucketName: 存储空间名称
+  endpoint: oss-cn-shenzhen.aliyuncs.com
+  accessKeyId: LTAI4Fza6F6nH49MjNggdwBd
+  accessKeySecret:  JAlOuSAhPlHvS9S9zxjhGdxxDJkRyR
+  bucketName: zyshuang
   filePath: images/
   expiration: 315360000
+
+#日志
+logging:
+  level:
+    root: info
+    com:
+      zyshuang:
+        community:
+          mapper: debug
+  file:
+    name: logs/community.log
+    max-size: 100MB
+    max-history: 15

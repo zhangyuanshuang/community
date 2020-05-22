@@ -1,0 +1,16 @@
+2020-05-22 23:41:29.122  INFO 3576 --- [main] c.z.community.CommunitiesApplication     : Starting CommunitiesApplication on USER-OAAN2V0H9C with PID 3576 (E:\Code\communities\target\classes started by Administrator in E:\Code\communities)
+2020-05-22 23:41:29.123  INFO 3576 --- [main] c.z.community.CommunitiesApplication     : No active profile set, falling back to default profiles: default
+2020-05-22 23:41:29.246  WARN 3576 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-22 23:41:29.981  INFO 3576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8887 (http)
+2020-05-22 23:41:29.987  INFO 3576 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-22 23:41:29.988  INFO 3576 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-22 23:41:29.989  INFO 3576 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-22 23:41:29.989  INFO 3576 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-22 23:41:29.989  INFO 3576 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-22 23:41:29.993  INFO 3576 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-22 23:41:30.051  INFO 3576 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-22 23:41:30.052  INFO 3576 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 880 ms
+2020-05-22 23:41:30.478  INFO 3576 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 23:41:30.600  INFO 3576 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-22 23:41:30.721  INFO 3576 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8887 (http) with context path ''
+2020-05-22 23:41:30.724  INFO 3576 --- [main] c.z.community.CommunitiesApplication     : Started CommunitiesApplication in 2.314 seconds (JVM running for 3.087)
