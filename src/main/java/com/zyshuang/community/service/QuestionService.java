@@ -66,9 +66,11 @@ public class QuestionService {
         if (page < 1) {
             page = 1;
         }
-
+        if (page > totalPage) {
+            page = totalPage;
+        }
         //查询数据索引值
-        int offset = size*(page-1);
+        int offset = page < 1 ? 0 : size * (page - 1);;
         questionQueryDTO.setSize(size);
         questionQueryDTO.setPage(offset);
         List<Question> questions = questionExtMapper.selectBySearch(questionQueryDTO);

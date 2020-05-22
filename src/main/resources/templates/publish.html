@@ -66,7 +66,7 @@
                                 <span class="label label-info" th:each="selectTagName:${selectCategory.tags}">
                                     <span class="glyphicon glyphicon-tags" onclick="selectTag(this)"
                                           th:data-tag="${selectTagName}"
-                                          th:text="${selectTagName}">
+                                          th:text="' '+${selectTagName}">
                                     </span>
                                 </span>
                             </div>

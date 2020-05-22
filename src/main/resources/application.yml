@@ -1,11 +1,12 @@
 server:
-  port: 8887
+  port: 80
 
 #数据源 mvc配置
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/community?serverTimezone=UTC
+    url: jdbc:mysql://47.115.13.75:3306/community?serverTimezone=UTC
+
     username: root
     password: root
   mvc:
@@ -15,9 +16,9 @@ spring:
 github:
   Client:
     id: Iv1.2533d223159ef22a
-    secret: dcdfdd8e3f3c30c055ee7a0b13522b1658ff6152
+    secret:
   Redirect:
-    uri: http://localhost:8887/callback
+    uri: http://47.115.13.75/callback
 
 #mybatis
 mybatis:
@@ -39,11 +40,11 @@ oss:
 logging:
   level:
     root: info
-    com:
-      zyshuang:
-        community:
-          mapper: debug
+  #    com:
+  #      zyshuang:
+  #        community:
+  #          mapper: debug
   file:
     name: logs/community.log
     max-size: 100MB
-    max-history: 15
+    max-history: 30
