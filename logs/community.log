@@ -197,3 +197,12 @@
 2020-05-23 03:08:44.620  INFO 9104 --- [http-nio-8887-exec-7] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
 2020-05-23 03:08:44.686  INFO 9104 --- [http-nio-8887-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
 2020-05-23 03:08:44.828  INFO 9104 --- [http-nio-8887-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-26 01:39:29.223  INFO 3968 --- [main] c.z.c.c.CommunitiesApplicationTests      : Starting CommunitiesApplicationTests on USER-OAAN2V0H9C with PID 3968 (started by Administrator in E:\Code\communities)
+2020-05-26 01:39:29.231  INFO 3968 --- [main] c.z.c.c.CommunitiesApplicationTests      : No active profile set, falling back to default profiles: default
+2020-05-26 01:39:29.755  WARN 3968 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-26 01:39:33.120  INFO 3968 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-26 01:39:33.319  INFO 3968 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-26 01:39:33.679  INFO 3968 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-26 01:39:33.754  INFO 3968 --- [main] c.z.c.c.CommunitiesApplicationTests      : Started CommunitiesApplicationTests in 5.333 seconds (JVM running for 7.182)
+2020-05-26 01:39:34.536  INFO 3968 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-26 01:39:34.538  INFO 3968 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
