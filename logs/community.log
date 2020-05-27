@@ -370,3 +370,193 @@ org.springframework.web.bind.MissingServletRequestParameterException: Required S
 2020-05-27 10:23:53.116  INFO 1048 --- [main] c.z.c.c.CommunitiesApplicationTests      : Started CommunitiesApplicationTests in 3.9 seconds (JVM running for 5.053)
 2020-05-27 10:23:53.425  INFO 1048 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
 2020-05-27 10:23:53.430  INFO 1048 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-27 10:47:51.646  INFO 7200 --- [main] c.z.community.CommunitiesApplication     : Starting CommunitiesApplication on USER-OAAN2V0H9C with PID 7200 (E:\Code\communities\target\classes started by Administrator in E:\Code\communities)
+2020-05-27 10:47:51.665  INFO 7200 --- [main] c.z.community.CommunitiesApplication     : No active profile set, falling back to default profiles: default
+2020-05-27 10:47:52.264  WARN 7200 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-27 10:47:57.882  INFO 7200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-27 10:47:57.942  INFO 7200 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-27 10:47:57.943  INFO 7200 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-27 10:47:57.945  INFO 7200 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-27 10:47:57.945  INFO 7200 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-27 10:47:57.945  INFO 7200 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-27 10:47:58.040  INFO 7200 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-27 10:47:58.301  INFO 7200 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-27 10:47:58.301  INFO 7200 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 6445 ms
+2020-05-27 10:48:02.079  INFO 7200 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-27 10:48:02.387  INFO 7200 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-27 10:48:03.099  INFO 7200 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-27 10:48:03.660  INFO 7200 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-27 10:48:03.784  INFO 7200 --- [main] c.z.community.CommunitiesApplication     : Started CommunitiesApplication in 15.235 seconds (JVM running for 18.126)
+2020-05-27 10:48:08.869  INFO 7200 --- [http-nio-80-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-27 10:48:08.870  INFO 7200 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-27 10:48:08.928  INFO 7200 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 58 ms
+2020-05-27 10:48:09.358  INFO 7200 --- [http-nio-80-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-27 10:48:10.235  INFO 7200 --- [http-nio-80-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-27 11:02:20.896  INFO 3664 --- [main] c.z.community.CommunitiesApplication     : Starting CommunitiesApplication on USER-OAAN2V0H9C with PID 3664 (E:\Code\communities\target\classes started by Administrator in E:\Code\communities)
+2020-05-27 11:02:20.899  INFO 3664 --- [main] c.z.community.CommunitiesApplication     : No active profile set, falling back to default profiles: default
+2020-05-27 11:02:24.023  WARN 3664 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-27 11:02:28.917  INFO 3664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-27 11:02:29.032  INFO 3664 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-27 11:02:29.032  INFO 3664 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-27 11:02:29.035  INFO 3664 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-27 11:02:29.035  INFO 3664 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-27 11:02:29.035  INFO 3664 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-27 11:02:29.072  INFO 3664 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-27 11:02:29.551  INFO 3664 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-27 11:02:29.552  INFO 3664 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7573 ms
+2020-05-27 11:02:31.602  INFO 3664 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-27 11:02:31.707  INFO 3664 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-27 11:02:31.930  INFO 3664 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-27 11:02:32.029  INFO 3664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-27 11:02:32.032  INFO 3664 --- [main] c.z.community.CommunitiesApplication     : Started CommunitiesApplication in 15.368 seconds (JVM running for 20.985)
+2020-05-27 11:02:33.150  INFO 3664 --- [http-nio-80-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-27 11:02:33.150  INFO 3664 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-27 11:02:33.166  INFO 3664 --- [http-nio-80-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 16 ms
+2020-05-27 11:02:33.356  INFO 3664 --- [http-nio-80-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-27 11:02:34.877  INFO 3664 --- [http-nio-80-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-27 11:05:17.689  INFO 4600 --- [main] c.z.community.CommunitiesApplication     : Starting CommunitiesApplication on USER-OAAN2V0H9C with PID 4600 (E:\Code\communities\target\classes started by Administrator in E:\Code\communities)
+2020-05-27 11:05:17.690  INFO 4600 --- [main] c.z.community.CommunitiesApplication     : No active profile set, falling back to default profiles: default
+2020-05-27 11:05:17.942  WARN 4600 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-27 11:05:19.919  INFO 4600 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-27 11:05:19.941  INFO 4600 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-27 11:05:19.941  INFO 4600 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-27 11:05:19.942  INFO 4600 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-27 11:05:19.943  INFO 4600 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-27 11:05:19.944  INFO 4600 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-27 11:05:19.956  INFO 4600 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-27 11:05:20.115  INFO 4600 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-27 11:05:20.115  INFO 4600 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2341 ms
+2020-05-27 11:05:20.983  INFO 4600 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-27 11:05:21.079  INFO 4600 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-27 11:05:21.202  INFO 4600 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-27 11:05:21.433  INFO 4600 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-27 11:05:21.438  INFO 4600 --- [main] c.z.community.CommunitiesApplication     : Started CommunitiesApplication in 4.877 seconds (JVM running for 5.516)
+2020-05-27 11:05:37.750  INFO 4600 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-27 11:05:37.750  INFO 4600 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-27 11:05:37.770  INFO 4600 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2020-05-27 11:05:37.873  INFO 4600 --- [http-nio-80-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-27 11:05:38.254  INFO 4600 --- [http-nio-80-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-27 11:08:07.167  WARN 4108 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-27 11:08:07.181  INFO 4108 --- [main] c.z.community.CommunitiesApplication     : Starting CommunitiesApplication on USER-OAAN2V0H9C with PID 4108 (E:\Code\communities\target\classes started by Administrator in E:\Code\communities)
+2020-05-27 11:08:07.183  INFO 4108 --- [main] c.z.community.CommunitiesApplication     : No active profile set, falling back to default profiles: default
+2020-05-27 11:08:09.524  INFO 4108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-27 11:08:09.540  INFO 4108 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-27 11:08:09.541  INFO 4108 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-27 11:08:09.543  INFO 4108 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-27 11:08:09.543  INFO 4108 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-27 11:08:09.544  INFO 4108 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-27 11:08:09.548  INFO 4108 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-27 11:08:09.652  INFO 4108 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-27 11:08:09.653  INFO 4108 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2338 ms
+2020-05-27 11:08:10.505  INFO 4108 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-27 11:08:10.595  INFO 4108 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-27 11:08:10.712  INFO 4108 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-27 11:08:10.788  INFO 4108 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-27 11:08:10.792  INFO 4108 --- [main] c.z.community.CommunitiesApplication     : Started CommunitiesApplication in 4.518 seconds (JVM running for 5.036)
+2020-05-27 11:08:21.661  INFO 4108 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-27 11:08:21.661  INFO 4108 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-27 11:08:21.678  INFO 4108 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2020-05-27 11:08:21.789  INFO 4108 --- [http-nio-80-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-27 11:08:22.039  INFO 4108 --- [http-nio-80-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-27 11:21:43.922  INFO 7544 --- [main] c.z.community.CommunitiesApplication     : Starting CommunitiesApplication on USER-OAAN2V0H9C with PID 7544 (E:\Code\communities\target\classes started by Administrator in E:\Code\communities)
+2020-05-27 11:21:43.928  INFO 7544 --- [main] c.z.community.CommunitiesApplication     : No active profile set, falling back to default profiles: default
+2020-05-27 11:21:44.210  WARN 7544 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-27 11:21:48.233  INFO 7544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-27 11:21:48.273  INFO 7544 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-27 11:21:48.273  INFO 7544 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-27 11:21:48.275  INFO 7544 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-27 11:21:48.275  INFO 7544 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-27 11:21:48.275  INFO 7544 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-27 11:21:48.287  INFO 7544 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-27 11:21:48.580  INFO 7544 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-27 11:21:48.581  INFO 7544 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4528 ms
+2020-05-27 11:21:50.097  INFO 7544 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-27 11:21:50.227  INFO 7544 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-27 11:21:50.409  INFO 7544 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-27 11:21:50.515  INFO 7544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-27 11:21:50.526  INFO 7544 --- [main] c.z.community.CommunitiesApplication     : Started CommunitiesApplication in 7.782 seconds (JVM running for 9.237)
+2020-05-27 11:21:50.864  INFO 7544 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-27 11:21:50.865  INFO 7544 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-27 11:21:50.877  INFO 7544 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-05-27 11:21:51.033  INFO 7544 --- [http-nio-80-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-27 11:21:51.358  INFO 7544 --- [http-nio-80-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-27 11:23:25.007  INFO 6084 --- [main] c.z.community.CommunitiesApplication     : Starting CommunitiesApplication on USER-OAAN2V0H9C with PID 6084 (E:\Code\communities\target\classes started by Administrator in E:\Code\communities)
+2020-05-27 11:23:25.011  INFO 6084 --- [main] c.z.community.CommunitiesApplication     : No active profile set, falling back to default profiles: default
+2020-05-27 11:23:25.194  WARN 6084 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-27 11:23:27.070  INFO 6084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-27 11:23:27.083  INFO 6084 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-27 11:23:27.083  INFO 6084 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-27 11:23:27.085  INFO 6084 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-27 11:23:27.085  INFO 6084 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-27 11:23:27.086  INFO 6084 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-27 11:23:27.088  INFO 6084 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-27 11:23:27.189  INFO 6084 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-27 11:23:27.189  INFO 6084 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2055 ms
+2020-05-27 11:23:28.076  INFO 6084 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-27 11:23:28.183  INFO 6084 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-27 11:23:28.387  INFO 6084 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-27 11:23:28.478  INFO 6084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-27 11:23:28.482  INFO 6084 --- [main] c.z.community.CommunitiesApplication     : Started CommunitiesApplication in 4.591 seconds (JVM running for 5.197)
+2020-05-27 11:23:32.793  INFO 6084 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-27 11:23:32.793  INFO 6084 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-27 11:23:32.803  INFO 6084 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-05-27 11:23:32.889  INFO 6084 --- [http-nio-80-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-27 11:23:33.046  INFO 6084 --- [http-nio-80-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-27 11:23:47.196 ERROR 6084 --- [http-nio-80-exec-10] c.z.c.controller.AuthorizeController     : callback get github error,null
+2020-05-27 12:20:44.384  INFO 2164 --- [main] c.z.community.CommunitiesApplication     : Starting CommunitiesApplication on USER-OAAN2V0H9C with PID 2164 (E:\Code\communities\target\classes started by Administrator in E:\Code\communities)
+2020-05-27 12:20:44.386  INFO 2164 --- [main] c.z.community.CommunitiesApplication     : No active profile set, falling back to default profiles: default
+2020-05-27 12:20:44.643  WARN 2164 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-27 12:20:48.234  INFO 2164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-27 12:20:48.258  INFO 2164 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-27 12:20:48.258  INFO 2164 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-27 12:20:48.260  INFO 2164 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-27 12:20:48.260  INFO 2164 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-27 12:20:48.260  INFO 2164 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-27 12:20:48.288  INFO 2164 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-27 12:20:48.546  INFO 2164 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-27 12:20:48.547  INFO 2164 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4000 ms
+2020-05-27 12:20:49.585  INFO 2164 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-27 12:20:49.675  INFO 2164 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-27 12:20:49.815  INFO 2164 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-27 12:20:49.891  INFO 2164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-27 12:20:49.895  INFO 2164 --- [main] c.z.community.CommunitiesApplication     : Started CommunitiesApplication in 6.539 seconds (JVM running for 8.153)
+2020-05-27 12:21:03.008  INFO 7544 --- [main] c.z.community.CommunitiesApplication     : Starting CommunitiesApplication on USER-OAAN2V0H9C with PID 7544 (E:\Code\communities\target\classes started by Administrator in E:\Code\communities)
+2020-05-27 12:21:03.016  INFO 7544 --- [main] c.z.community.CommunitiesApplication     : No active profile set, falling back to default profiles: default
+2020-05-27 12:21:03.592  WARN 7544 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-27 12:21:05.841  INFO 7544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2020-05-27 12:21:05.854  INFO 7544 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-27 12:21:05.855  INFO 7544 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-05-27 12:21:05.857  INFO 7544 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-05-27 12:21:05.857  INFO 7544 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-27 12:21:05.857  INFO 7544 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-27 12:21:05.862  INFO 7544 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-05-27 12:21:05.982  INFO 7544 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-27 12:21:05.982  INFO 7544 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2694 ms
+2020-05-27 12:21:06.797  INFO 7544 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-27 12:21:06.884  INFO 7544 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-27 12:21:07.015  INFO 7544 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-27 12:21:07.086  INFO 7544 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2020-05-27 12:21:07.089  INFO 7544 --- [main] c.z.community.CommunitiesApplication     : Started CommunitiesApplication in 4.953 seconds (JVM running for 5.513)
+2020-05-27 12:21:10.361  INFO 7544 --- [http-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-27 12:21:10.362  INFO 7544 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-27 12:21:10.373  INFO 7544 --- [http-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-05-27 12:21:10.476  INFO 7544 --- [http-nio-80-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-27 12:21:10.683  INFO 7544 --- [http-nio-80-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-27 12:25:19.759  INFO 2940 --- [main] c.z.c.c.CommunitiesApplicationTests      : Starting CommunitiesApplicationTests on USER-OAAN2V0H9C with PID 2940 (started by Administrator in E:\Code\communities)
+2020-05-27 12:25:19.760  INFO 2940 --- [main] c.z.c.c.CommunitiesApplicationTests      : No active profile set, falling back to default profiles: default
+2020-05-27 12:25:19.942  WARN 2940 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-27 12:25:25.488  INFO 2940 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-27 12:25:25.693  INFO 2940 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-27 12:25:28.184  INFO 2940 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-27 12:25:28.346  INFO 2940 --- [main] c.z.c.c.CommunitiesApplicationTests      : Started CommunitiesApplicationTests in 9.581 seconds (JVM running for 12.145)
+2020-05-27 12:25:29.707  INFO 2940 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-27 12:25:29.710  INFO 2940 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-27 12:28:32.077  INFO 8524 --- [main] c.z.c.c.CommunitiesApplicationTests      : Starting CommunitiesApplicationTests on USER-OAAN2V0H9C with PID 8524 (started by Administrator in E:\Code\communities)
+2020-05-27 12:28:32.081  INFO 8524 --- [main] c.z.c.c.CommunitiesApplicationTests      : No active profile set, falling back to default profiles: default
+2020-05-27 12:28:32.380  WARN 8524 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-05-27 12:28:34.557  INFO 8524 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-27 12:28:34.694  INFO 8524 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-05-27 12:28:34.970  INFO 8524 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-05-27 12:28:35.043  INFO 8524 --- [main] c.z.c.c.CommunitiesApplicationTests      : Started CommunitiesApplicationTests in 3.479 seconds (JVM running for 4.517)
+2020-05-27 12:28:35.649  INFO 8524 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2020-05-27 12:28:35.650  INFO 8524 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

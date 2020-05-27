@@ -69,6 +69,14 @@ body{
     width: 90%;
 }
 
+.question-description{
+    overflow: hidden;
+    text-overflow: clip;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
 .community-menu{
     margin-bottom: 15px;
     font-size: 13px;

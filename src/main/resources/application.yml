@@ -1,13 +1,13 @@
 server:
-  port: 80
+  port: 8887
 
 #数据源 mvc配置
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://47.115.13.75:3306/community?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/community?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
-    password: 123456
+    password: root
   mvc:
     static-path-pattern: /**
 
@@ -17,7 +17,7 @@ github:
     id: Iv1.2533d223159ef22a
     secret: 194159fe1026e053e137dd63717aca322baa6f6f
   Redirect:
-    uri: http://47.115.13.75/callback
+    uri: http://localhost:8887/callback
 
 #mybatis
 mybatis:

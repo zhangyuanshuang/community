@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>码匠社区</title>
+    <title>达摩式编程院</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/css/community.css">
@@ -35,7 +35,7 @@
                     <h4 class="media-heading" >
                         <a th:href="@{'/question/' + ${question.id}}" th:text="${question.title}"></a>
                     </h4>
-                    <span th:text="${question.description}"></span><br>
+                    <span class="question-description" th:text="${question.description}"></span><br>
                     <span class="text-desc"><span th:text="${question.commentCount}"></span>个回复 · <span th:text="${question.viewCount}"></span>浏览 · <span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span></span>
                 </div>
             </div>
@@ -69,8 +69,12 @@
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h4>站长微信（教你变光头）</h4>
+                <h4>张大帅比微信（教你变光头）</h4>
                 <img class="question_image img-thumbnail" src="/images/weixin.jpg" alt="">
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4>张大帅比QQ（教你变光头）</h4>
+                <img class="question_image img-thumbnail" src="/images/qq.png" alt="">
             </div>
         </div>
     </div>
