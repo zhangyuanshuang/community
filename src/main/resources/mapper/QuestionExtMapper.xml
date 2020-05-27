@@ -14,14 +14,14 @@
     </resultMap>
 
     <update id="incView" parameterType="com.zyshuang.community.entities.Question">
-    update QUESTION
+    update question
     set
     VIEW_COUNT = VIEW_COUNT + #{viewCount,jdbcType=INTEGER}
     where id = #{id}
     </update>
 
     <update id="incCommentCount" parameterType="com.zyshuang.community.entities.Question">
-    update QUESTION
+    update question
     set
     COMMENT_COUNT = COMMENT_COUNT + #{commentCount,jdbcType=INTEGER}
     where id = #{id}
@@ -29,11 +29,11 @@
 
 
     <select id="selectRelated" parameterType="com.zyshuang.community.entities.Question" resultMap="BaseResultMap">
-        select * from QUESTION where id != #{id} and tag regexp #{tag}
+        select * from question where id != #{id} and tag regexp #{tag}
     </select>
 
     <select id="countBySearch" parameterType="com.zyshuang.community.dto.QuestionQueryDTO" resultType="java.lang.Integer">
-        select COUNT(*)  from QUESTION
+        select COUNT(*)  from question
         <where>
             <if test="search !='' and search != null">
                 and title regexp #{search}
@@ -41,7 +41,7 @@
         </where>
     </select>
     <select id="selectBySearch" parameterType="com.zyshuang.community.dto.QuestionQueryDTO" resultMap="BaseResultMap">
-        select *  from QUESTION
+        select *  from question
         <where>
             <if test="search !='' and search != null">
                 and title regexp #{search}

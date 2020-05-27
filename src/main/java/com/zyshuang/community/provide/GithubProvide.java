@@ -40,7 +40,6 @@ public class GithubProvide {
             Response response = client.newCall(request).execute();
             String string = response.body().string();
             GithubUser githubUser = JSON.parseObject(string, GithubUser.class);
-            System.out.println(githubUser);
             return githubUser;
         } catch (Exception e) {
             e.printStackTrace();

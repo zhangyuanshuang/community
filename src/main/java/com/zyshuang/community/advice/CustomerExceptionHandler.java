@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSON;
 import com.zyshuang.community.dto.ResultDTO;
 import com.zyshuang.community.exception.CustomerErrorCode;
 import com.zyshuang.community.exception.CustomerException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
 @ControllerAdvice
+@Slf4j
 public class CustomerExceptionHandler {
 
     @ExceptionHandler(Exception.class)
@@ -29,6 +31,7 @@ public class CustomerExceptionHandler {
             if (e instanceof CustomerException) {
                 resultDTO = ResultDTO.errorOf((CustomerException) e);
             } else {
+                log.error("handle error dto", e);
                 resultDTO = ResultDTO.errorOf(CustomerErrorCode.SYS_ERROR);
             }
             try {
@@ -48,9 +51,9 @@ public class CustomerExceptionHandler {
             if (e instanceof CustomerException) {
                 model.addAttribute("message", e.getMessage());
             } else {
+                log.error("handle error", e);
                 model.addAttribute("message", CustomerErrorCode.SYS_ERROR.getMessage());
             }
-            System.out.println("执行了..........................................");
             return new ModelAndView("error");
         }
 
