@@ -219,4 +219,12 @@ public class QuestionService {
             return quesDTO;
         }).collect(Collectors.toList());
     }
+
+    /**
+     * 删除发布问题
+     * @param id
+     */
+    public void deleteQuestionById(Long id) {
+        questionMapper.deleteByPrimaryKey(id);
+    }
 }

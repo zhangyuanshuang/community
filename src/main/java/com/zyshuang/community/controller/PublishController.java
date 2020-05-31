@@ -6,6 +6,7 @@ import com.zyshuang.community.entities.Question;
 import com.zyshuang.community.entities.User;
 import com.zyshuang.community.service.QuestionService;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -69,7 +70,7 @@ public class PublishController {
             return "publish";
         }
         if (StringUtils.isNotBlank(invalid)){
-            model.addAttribute("error","输入非法标签"+invalid);
+            model.addAttribute("error","不能输入非法标签:"+invalid);
             return "publish";
         }
 
@@ -88,4 +89,6 @@ public class PublishController {
         questionService.insertOrUpdate(question);
         return "redirect:/";
     }
+
+
 }

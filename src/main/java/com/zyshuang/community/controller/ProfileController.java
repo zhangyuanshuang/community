@@ -1,15 +1,18 @@
 package com.zyshuang.community.controller;
 
 import com.zyshuang.community.dto.PaginationDTO;
+import com.zyshuang.community.dto.QuestionDTO;
 import com.zyshuang.community.entities.User;
+import com.zyshuang.community.exception.CustomerErrorCode;
+import com.zyshuang.community.exception.CustomerException;
 import com.zyshuang.community.service.NotificationService;
 import com.zyshuang.community.service.QuestionService;
+import jdk.nashorn.internal.ir.IfNode;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -49,5 +52,32 @@ public class ProfileController {
             model.addAttribute("sectionName", "最新回复");
         }
         return "profile";
+    }
+
+    @GetMapping("/question/delete/{id}")
+    public String doDelete(@PathVariable("id") Long id,
+                           Model model,
+                           @RequestParam(name = "page", defaultValue = "1") Integer page,
+                           @RequestParam(name = "size", defaultValue = "5") Integer size,
+                           HttpServletRequest request){
+
+        //从session中获取
+        User user = (User) request.getSession().getAttribute("user");
+
+        //查询问题
+        QuestionDTO questionDTO = questionService.getQuestionById(id);
+
+        if (user == null) {
+            throw new CustomerException(CustomerErrorCode.NOT_LOGIN);
+        }
+        if (questionDTO.getCreator() != user.getId()){
+            throw new CustomerException(CustomerErrorCode.DELETE_QUESTION_FAIL);
+        }
+        if (id != questionDTO.getId()){
+            throw new CustomerException(CustomerErrorCode.QUESTION_NOT_FOUND);
+        }
+        questionService.deleteQuestionById(id);
+
+        return "redirect:/profile/question";
     }
 }
