@@ -74,47 +74,47 @@ function collapseComment(e) {
         e.removeAttribute("data-collapse");
         e.classList.remove("active");
     } else {
-        var subCommentContainer = $("#comment-"+id);
+        var subCommentContainer = $("#comment-" + id);
         // console.log(subCommentContainer);
         // console.log(subCommentContainer.children().length);
-        if (subCommentContainer.children().length !== 1){
+        if (subCommentContainer.children().length !== 1) {
             //展开二级评论
             comments.addClass("in");
             //标记二级评论展开状态
             e.setAttribute("data-collapse", "in");
             e.classList.add("active");
-        }else {
+        } else {
             //渲染回复二级评论的评论
             $.getJSON("/comment/" + id, function (data) {
-                $.each(data.data.reverse(), function (index,comment) {
+                $.each(data.data.reverse(), function (index, comment) {
 
-                    var mediaBodyElement = $("<div/>",{
-                        "class":"media-body"
-                    }).append($("<h5/>",{
-                        "class":"media-heading",
-                        "text":comment.user.name
-                    })).append($("<div/>",{
-                            "html":comment.content
-                    })).append($("<div/>",{
-                            "class":"menu"
-                    }).append($("<span/>",{
-                        "class":"pull-right",
-                        "html":moment(comment.gmtCreate).format('YYYY-MM-DD')
+                    var mediaBodyElement = $("<div/>", {
+                        "class": "media-body"
+                    }).append($("<h5/>", {
+                        "class": "media-heading",
+                        "text": comment.user.name
+                    })).append($("<div/>", {
+                        "html": comment.content
+                    })).append($("<div/>", {
+                        "class": "menu"
+                    }).append($("<span/>", {
+                        "class": "pull-right",
+                        "html": moment(comment.gmtCreate).format('YYYY-MM-DD')
                     })));
 
-                    var mediaLeftElement = $("<div/>",{
-                        "class":"media-left"
-                    }).append( $("<img/>",{
-                        "class":"media-object img-rounded",
-                        "src":comment.user.avatarUrl
+                    var mediaLeftElement = $("<div/>", {
+                        "class": "media-left"
+                    }).append($("<img/>", {
+                        "class": "media-object img-rounded",
+                        "src": comment.user.avatarUrl
                     }));
 
-                    var mediaElement = $("<div/>",{
-                        "class":"media"
+                    var mediaElement = $("<div/>", {
+                        "class": "media"
                     }).append(mediaLeftElement).append(mediaBodyElement);
 
-                    var commentElement = $("<div/>",{
-                        "class":"col-lg-12 col-md-12 col-sm-12 col-xs-12 comments"
+                    var commentElement = $("<div/>", {
+                        "class": "col-lg-12 col-md-12 col-sm-12 col-xs-12 comments"
                     }).append(mediaElement);
 
                     subCommentContainer.prepend(commentElement);
@@ -138,10 +138,10 @@ function selectTag(e) {
     var previous = $("#tag").val();
     console.log(previous.split(","));
     //indexof 可判断字符串首次出现的位置 没有出现返回-1
-    if (previous.split(",").indexOf(value) === -1){
-        if (previous){
+    if (previous.split(",").indexOf(value) === -1) {
+        if (previous) {
             $("#tag").val(previous + ',' + value);
-        }else {
+        } else {
             $("#tag").val(value);
         }
     }
@@ -152,4 +152,32 @@ function selectTag(e) {
  */
 function showSelectTag() {
     $("#select-tag").show();
+}
+
+/**
+ * 删除功能
+ * @param e
+ */
+function doLayer(e) {
+    layer.confirm('你确定要删除问题吗?', {icon: 3, title: '提示', btn: ['确定', '取消']}
+        , function (ind) {
+            doDelete(e);
+            layer.close(ind);
+        }, function (inds) {
+            layer.close(inds);
+        });
+}
+function doDelete(e) {
+    var id = e.getAttribute("data-doDelete");
+    console.log(id);
+    $.ajax({
+        type: "POST",
+        url: "/question/delete",
+        data: {
+            id: id
+        },
+        success: function () {
+            window.location.href = "/profile/question";
+        }
+    });
 }

@@ -16,6 +16,8 @@ public class ResultDTO<T> {
 
     private T data;
 
+    private Boolean success;
+
     public static ResultDTO errorOf(Integer code , String message){
         ResultDTO resultDTO = new ResultDTO();
         resultDTO.setCode(code);

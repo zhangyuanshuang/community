@@ -2,6 +2,7 @@ package com.zyshuang.community.controller;
 
 import com.zyshuang.community.dto.PaginationDTO;
 import com.zyshuang.community.dto.QuestionDTO;
+import com.zyshuang.community.dto.ResultDTO;
 import com.zyshuang.community.entities.User;
 import com.zyshuang.community.exception.CustomerErrorCode;
 import com.zyshuang.community.exception.CustomerException;
@@ -54,12 +55,12 @@ public class ProfileController {
         return "profile";
     }
 
-    @GetMapping("/question/delete/{id}")
-    public String doDelete(@PathVariable("id") Long id,
-                           Model model,
-                           @RequestParam(name = "page", defaultValue = "1") Integer page,
-                           @RequestParam(name = "size", defaultValue = "5") Integer size,
+    @PostMapping("/question/delete")
+    @ResponseBody
+    public ResultDTO doDelete(@Param("id") Long id,
                            HttpServletRequest request){
+
+        ResultDTO result = new ResultDTO();
 
         //从session中获取
         User user = (User) request.getSession().getAttribute("user");
@@ -77,7 +78,6 @@ public class ProfileController {
             throw new CustomerException(CustomerErrorCode.QUESTION_NOT_FOUND);
         }
         questionService.deleteQuestionById(id);
-
-        return "redirect:/profile/question";
+        return result;
     }
 }
