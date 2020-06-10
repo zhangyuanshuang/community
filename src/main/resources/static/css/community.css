@@ -6,6 +6,13 @@ body{
     margin: 30px;
     background-color: white;
 }
+.index-tag{
+    word-wrap: break-word;
+}
+.index-tag-a{
+    background: red linear-gradient(to right,rgba(0,255,0,0), rgba(0,255,0,0.2));
+}
+
 .btn-publish{
     float: right;
     margin-bottom: 15px;

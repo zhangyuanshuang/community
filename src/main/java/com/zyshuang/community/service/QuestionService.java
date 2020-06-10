@@ -35,10 +35,10 @@ public class QuestionService {
     private UserMapper userMapper;
 
     //查询所有用户发布的话题数
-    public PaginationDTO list(String search, Integer page, Integer size){
+    public PaginationDTO list(String search, Integer page, Integer size) {
 
 
-        if (StringUtils.isNotBlank(search)){
+        if (StringUtils.isNotBlank(search)) {
             //按空格切割
             String[] searchSplit = StringUtils.split(search, " ");
             //以|拼接起来
@@ -54,13 +54,13 @@ public class QuestionService {
         //总题数
         Integer totalCount = questionExtMapper.countBySearch(questionQueryDTO);
 
-        if (totalCount % size == 0){
+        if (totalCount % size == 0) {
             totalPage = totalCount / size;
-        }else {
+        } else {
             totalPage = totalCount / size + 1;
         }
         //所有用户话题分页
-        paginationDTO.setPagination(totalPage,page);
+        paginationDTO.setPagination(totalPage, page);
 
 
         if (page < 1) {
@@ -70,7 +70,8 @@ public class QuestionService {
             page = totalPage;
         }
         //查询数据索引值
-        int offset = page < 1 ? 0 : size * (page - 1);;
+        int offset = page < 1 ? 0 : size * (page - 1);
+        ;
         questionQueryDTO.setSize(size);
         questionQueryDTO.setPage(offset);
         List<Question> questions = questionExtMapper.selectBySearch(questionQueryDTO);
@@ -80,7 +81,7 @@ public class QuestionService {
             User user = userMapper.selectByPrimaryKey(question.getCreator());
             QuestionDTO questionDTO = new QuestionDTO();
             //将question所有属性复制到questionDTO
-            BeanUtils.copyProperties(question,questionDTO);
+            BeanUtils.copyProperties(question, questionDTO);
             //将查出来的user的数据添加到传输层（DTO）
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
@@ -97,11 +98,11 @@ public class QuestionService {
         //总题数
         QuestionExample questionExample = new QuestionExample();
         questionExample.createCriteria()
-                       .andCreatorEqualTo(userId);
-        Integer totalCount = (int)questionMapper.countByExample(questionExample);
-        if (totalCount % size == 0){
+                .andCreatorEqualTo(userId);
+        Integer totalCount = (int) questionMapper.countByExample(questionExample);
+        if (totalCount % size == 0) {
             totalPage = totalCount / size;
-        }else {
+        } else {
             totalPage = totalCount / size + 1;
         }
 
@@ -113,10 +114,10 @@ public class QuestionService {
         }
 
         //当前用户发布话题分页
-        paginationDTO.setPagination(totalPage,page);
+        paginationDTO.setPagination(totalPage, page);
 
         //查询数据索引值
-        int offset = size*(page-1);
+        int offset = size * (page - 1);
 
         QuestionExample example = new QuestionExample();
         example.createCriteria()
@@ -129,7 +130,7 @@ public class QuestionService {
             User user = userMapper.selectByPrimaryKey(question.getCreator());
             QuestionDTO questionDTO = new QuestionDTO();
             //将question所有属性复制到questionDTO
-            BeanUtils.copyProperties(question,questionDTO);
+            BeanUtils.copyProperties(question, questionDTO);
             //将查出来的user的数据添加到传输层（DTO）
             questionDTO.setUser(user);
             questionDTOList.add(questionDTO);
@@ -140,13 +141,14 @@ public class QuestionService {
 
     /**
      * 根据id查询话题
+     *
      * @param id
      * @return
      */
-        public QuestionDTO getQuestionById(Long id) {
+    public QuestionDTO getQuestionById(Long id) {
         //根据Id查询问题
         Question question = questionMapper.selectByPrimaryKey(id);
-        if (question == null){
+        if (question == null) {
             throw new CustomerException(CustomerErrorCode.QUESTION_NOT_FOUND);
         }
         User user = userMapper.selectByPrimaryKey(question.getCreator());
@@ -158,24 +160,25 @@ public class QuestionService {
         questionDTO.setUser(user);
 
         //将question所有属性复制到questionDTO
-        BeanUtils.copyProperties(question,questionDTO);
+        BeanUtils.copyProperties(question, questionDTO);
 
         return questionDTO;
     }
 
     /**
      * 修改和发布话题
+     *
      * @param question
      */
     public void insertOrUpdate(Question question) {
-        if (question.getId() == null){
+        if (question.getId() == null) {
             question.setGmtCreate(System.currentTimeMillis());
             question.setGmtModified(question.getGmtCreate());
             question.setViewCount(0);
             question.setCommentCount(0);
             question.setLikeCount(0);
             questionMapper.insert(question);
-        }else{
+        } else {
 
             Question updateQuestion = new Question();
             updateQuestion.setGmtModified(System.currentTimeMillis());
@@ -184,9 +187,9 @@ public class QuestionService {
             updateQuestion.setTag(question.getTag());
             QuestionExample example = new QuestionExample();
             example.createCriteria()
-                   .andIdEqualTo(question.getId());
+                    .andIdEqualTo(question.getId());
             int i = questionMapper.updateByExampleSelective(updateQuestion, example);
-            if (i != 1){
+            if (i != 1) {
                 throw new CustomerException(CustomerErrorCode.QUESTION_NOT_FOUND);
             }
         }
@@ -200,7 +203,7 @@ public class QuestionService {
     }
 
     public List<QuestionDTO> selectRelated(QuestionDTO questionDTO) {
-        if (StringUtils.isBlank(questionDTO.getTag())){
+        if (StringUtils.isBlank(questionDTO.getTag())) {
             return new ArrayList<>();
         }
         //替换
@@ -215,16 +218,75 @@ public class QuestionService {
         List<Question> questions = questionExtMapper.selectRelated(question);
         return questions.stream().map(q -> {
             QuestionDTO quesDTO = new QuestionDTO();
-            BeanUtils.copyProperties(q,quesDTO);
+            BeanUtils.copyProperties(q, quesDTO);
             return quesDTO;
         }).collect(Collectors.toList());
     }
 
     /**
      * 删除发布问题
+     *
      * @param id
      */
     public void deleteQuestionById(Long id) {
         questionMapper.deleteByPrimaryKey(id);
+    }
+
+    /**
+     * 热门标签
+     * @param tag
+     * @param page
+     * @param size
+     * @return
+     */
+    public PaginationDTO listByTag(String tag, Integer page, Integer size) {
+
+        PaginationDTO<QuestionDTO> paginationDTO = new PaginationDTO<>();
+        int totalPage;
+        //总题数
+        QuestionExample questionExample = new QuestionExample();
+        questionExample.createCriteria()
+                .andTagLike("%"+tag+"%");
+        Integer totalCount = (int) questionMapper.countByExample(questionExample);
+        if (totalCount % size == 0) {
+            totalPage = totalCount / size;
+        } else {
+            totalPage = totalCount / size + 1;
+        }
+
+        if (page < 1) {
+            page = 1;
+        }
+        if (page > totalPage) {
+            page = totalPage;
+        }
+
+        //当前标签话题分页
+        paginationDTO.setPagination(totalPage, page);
+
+        //查询数据索引值
+        int offset =  page < 1 ? 0 : size * (page - 1);
+
+        //根据tag查询话题并分页
+        QuestionExample example = new QuestionExample();
+        example.createCriteria()
+                .andTagLike("%"+tag+"%");
+        example.setOrderByClause("gmt_create desc");
+        List<Question> questions = questionMapper.selectByExampleWithRowbounds(example, new RowBounds(offset, size));
+        //放置查询出来的数据
+        List<QuestionDTO> questionDTOList = new ArrayList<>();
+
+        for (Question question : questions) {
+            //查询用户信息
+            User user = userMapper.selectByPrimaryKey(question.getCreator());
+            QuestionDTO questionDTO = new QuestionDTO();
+            //将question所有属性复制到questionDTO
+            BeanUtils.copyProperties(question, questionDTO);
+            //将查出来的user的数据添加到传输层（DTO）
+            questionDTO.setUser(user);
+            questionDTOList.add(questionDTO);
+        }
+        paginationDTO.setData(questionDTOList);
+        return paginationDTO;
     }
 }

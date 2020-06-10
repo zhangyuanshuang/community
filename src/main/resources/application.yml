@@ -15,7 +15,7 @@ spring:
 github:
   Client:
     id: Iv1.2533d223159ef22a
-    secret: 194159fe1026e053e137dd63717aca322baa6f6f
+    secret: 26fa28145c1007aa77206e12c53bdc2b75df327a
   Redirect:
     uri: http://localhost:8887/callback
 
