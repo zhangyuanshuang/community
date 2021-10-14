@@ -14,8 +14,8 @@ spring:
 #Github第三方
 github:
   Client:
-    id: Iv1.2533d223159ef22a
-    secret: 26fa28145c1007aa77206e12c53bdc2b75df327a
+    id: *****
+    secret: *****
   Redirect:
     uri: http://localhost:8887/callback
 
@@ -29,8 +29,8 @@ mybatis:
 #云存储
 oss:
   endpoint: oss-cn-shenzhen.aliyuncs.com
-  accessKeyId: LTAI4Fza6F6nH49MjNggdwBd
-  accessKeySecret:  JAlOuSAhPlHvS9S9zxjhGdxxDJkRyR
+  accessKeyId: *****
+  accessKeySecret:  *****
   bucketName: zyshuang
   filePath: images/
   expiration: 315360000
